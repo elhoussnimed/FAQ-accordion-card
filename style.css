@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+body {
+  height: 100vh;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+  font-family: "Kumbh Sans";
+}
+.container {
+  background: url(./images/bg-pattern-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: white;
+  width: 900px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.9));
+  position: relative;
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.9));
+  border-radius: 20px;
+}
+.container::before {
+  content: url(./images/illustration-box-desktop.svg);
+  position: absolute;
+  z-index: 4;
+  left: -10.5%;
+  top: 40%;
+  width: 20%;
+}
+.container .imgs {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.container .imgs .woman {
+  position: relative;
+  left: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.container .imgs .box {
+  display: none;
+}
+.container .accordion {
+  width: 45%;
+}
+details {
+  height: auto;
+  border-bottom: 1px solid darkgrey;
+  width: 85%;
+  padding: 15px 0;
+}
+details[open] {
+  font-weight: 400;
+  color: hsl(237, 12%, 33%);
+}
+details:hover summary {
+  color: hsl(14, 88%, 65%);
+}
+details summary {
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+}
+details[open] summary {
+  font-weight: 700;
+  color: hsl(238, 29%, 16%);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+details summary::before {
+  position: absolute;
+  content: url(./images/icon-arrow-down.svg);
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+details[open] summary::before {
+  transform: rotate(180deg);
+}
+
+.attribution {
+  font-size: 14px;
+  text-align: center;
+}
+.attribution a {
+  color: #fff176;
+}
+
+@media (max-width: 778px) {
+  .container {
+    flex-direction: column;
+    width: 75%;
+    height: 400px;
+  }
+  .container::before {
+    display: none;
+  }
+  .container .imgs {
+    width: 100%;
+    /* height: 30%; */
+    overflow: visible;
+  }
+  .container .imgs .woman {
+    position: absolute;
+    left: 50%;
+    top: -100%;
+    transform: translate(-50%);
+    width: 70%;
+  }
+  .container .imgs .box {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    width: 25%;
+    left: 15%;
+    top: -35%;
+  }
+  .container .accordion {
+    width: 95%;
+    margin-inline: auto;
+    /* height: 80%; */
+    margin-bottom: 10px;
+  }
+  .container .accordion h1 {
+    text-align: center;
+  }
+  details {
+    width: 100%;
+    font-size: 12px;
+  }
+  details[open] {
+    font-size: 10px;
+  }
+  details[open] summary {
+    font-size: 12px;
+  }
+  .attribution {
+    font-size: 11px;
+  }
+}
